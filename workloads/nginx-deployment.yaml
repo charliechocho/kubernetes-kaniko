@@ -5,7 +5,7 @@ metadata:
   name: nginx-deployment
   namespace: web
   annotations:
-    fluxcd.io/automated: "true"
+    fluxcd.io/automated: "false"
 spec:
   selector:
     matchLabels:
@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: kaniko-test/nginx:v3
+        image: charliechocho/nginx:v3
         ports:
         - containerPort: 80

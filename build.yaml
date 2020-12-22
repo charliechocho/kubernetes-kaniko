@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: kaniko
+  name: kaniko2
 spec:
   template:
     spec:
       containers:
-      - name: kaniko
+      - name: kaniko2
         image: gcr.io/kaniko-project/executor:latest
         args: ["--dockerfile=Dockerfile",
                "--context=git://github.com/charliechocho/kubernetes-kaniko.git#refs/heads/master",
-               "--destination=charliechocho/nginx:v3"]
+               "--destination=charliechocho/nginx:v4"]
         volumeMounts:
         - name: kaniko-secret
           mountPath: "/kaniko/.docker"
